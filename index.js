@@ -1,11 +1,11 @@
 const { Telegraf } = require('telegraf')
 require('dotenv').config()
+const commConst = require('./const')
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.start((ctx) => ctx.reply('Welcome'))
-bot.help((ctx) => ctx.reply('Send me a sticker'))
-bot.on('sticker', (ctx) => ctx.reply('👍'))
-bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+bot.start((ctx) => ctx.reply(`Hello ${ctx.message.from.first_name}`))
+bot.help((ctx) => ctx.reply(commConst.commands))
+
 bot.launch()
 
 // Enable graceful stop
