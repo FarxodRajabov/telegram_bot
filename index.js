@@ -26,7 +26,7 @@ function addActoinBot(name,src,text) {
                     source: src
                 })
             }
-            await ctx.replyWithHTML('processing button 1', {
+            await ctx.replyWithHTML(text, {
                 disable_web_page_preview: true
             })
         }catch(e){
@@ -34,6 +34,9 @@ function addActoinBot(name,src,text) {
         }
     })
 }
+addActoinBot('btn_1', './img/1.jpg', commConst.text1)
+addActoinBot('btn_1', './img/2.jpg', commConst.text2)
+addActoinBot('btn_1', false, commConst.text3)
 
 bot.launch()
 
